@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('developer-compile') {
+            steps {
+                sh "mvn compile"
+            }
+        }
+        stage('code-review') {
+            steps {
+                sh "mvn pmd:pmd"
+            }
+        }
+        stage('Qa-test') {
+            steps {
+                sh "mvn test"
+            }
+        }
+	stage('Qa-metriccheck') {
+		steps {
+		   sh "cobertura:cobertura"
+
+		}
+	}
+         stage('package') {
+                steps {
+                   sh "mvn package"
+                }
+        } 
+    }
+} 
+   
