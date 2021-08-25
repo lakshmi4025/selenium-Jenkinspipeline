@@ -1,8 +1,12 @@
 pipeline {
     agent any
-
-    stages {
-        stage('developer-compile') {
+      stages {
+    stage ('SCM checkout'){
+		git "https://github.com/puneetbhatia77/selenium-Jenkinspipeline"
+              }
+       }	      
+    
+    stage('developer-compile') {
             steps {
                 sh "mvn compile"
             }
