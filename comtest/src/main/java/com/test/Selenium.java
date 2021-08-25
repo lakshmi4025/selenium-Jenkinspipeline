@@ -5,11 +5,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Selenium {
 
     public static void main(String[] args) {
-       System.setProperty("webdriver.chrome.driver", "C:\\Users\\<username>\\Downloads\\chromedriver_win32\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        String baseUrl = "https://google.com";
-        String expectedTitle = "Google";
-        String actualTitle = "";
+      [...]
+public Map initCrawler(Things that I give as input) throws InterruptedException, ApiException, IOException {
+    System.setProperty("webdriver.chrome.driver",  BackEndProperties.getProperty("chrome_driver_path") );
+    final ChromeOptions chromeOptions = new ChromeOptions();
+    //chromeOptions.setBinary("/usr/bin/chromium-browser"); 
+    chromeOptions.addArguments("--headless");
+    chromeOptions.addArguments("--disable-extensions");
+    chromeOptions.addArguments("--disable-gpu");
+    chromeOptions.addArguments("--no-sandbox");
+    [...]
+
         driver.get(baseUrl);
         actualTitle = driver.getTitle();
 		System.out.println(actualTitle);
