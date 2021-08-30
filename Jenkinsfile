@@ -4,7 +4,7 @@ node {
 		}
 	stage ('Build'){
     	dir("comtest") {
-	   bat "mvn clean install"
+	   bat "mvn  install"
        }
 	}
     stage ('test') {
