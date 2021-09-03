@@ -4,10 +4,10 @@ node {
 		}
 	stage ('Build'){
     	dir("comtest") {
-	   sh "mvn  install"
+	   bat "mvn  install"
        }
 	}
     stage ('test') {
-    	sh "java -jar comtest/target/com.test-1.0-SNAPSHOT.jar"
+    	bat "java -jar comtest/target/com.test-1.0-SNAPSHOT.jar"
     }
 }
