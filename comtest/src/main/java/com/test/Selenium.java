@@ -5,17 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Selenium {
 
     public static void main(String[] args) {
-     
-public Map initCrawler(Things that I give as input) throws InterruptedException, ApiException, IOException {
-    System.setProperty("webdriver.chrome.driver",  BackEndProperties.getProperty("chrome_driver_path") );
-    final ChromeOptions chromeOptions = new ChromeOptions();
-    //chromeOptions.setBinary("/usr/bin/chromium-browser"); 
-    chromeOptions.addArguments("--headless");
-    chromeOptions.addArguments("--disable-extensions");
-    chromeOptions.addArguments("--disable-gpu");
-    chromeOptions.addArguments("--no-sandbox");
-   
-
+	  
+	    
+        System.setProperty("webdriver.chrome.driver", "comtest/lib/chromedriver.exe"); // <-- Change this path
+        WebDriver driver = new ChromeDriver();
+        String baseUrl = "https://google.com";
+        String expectedTitle = "Google";
+        String actualTitle = "";
         driver.get(baseUrl);
         actualTitle = driver.getTitle();
 		System.out.println(actualTitle);
